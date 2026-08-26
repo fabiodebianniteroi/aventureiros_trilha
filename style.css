@@ -1,0 +1,567 @@
+﻿/* --- ESTILOS GERAIS & PALETA DE CORES --- */
+        :root {
+            --verde-natureza: #2D5A27;
+            --azul-agua: #1F4E5B;
+            --laranja-sol: #E07A5F;
+            --claro: #F8F9FA;
+            --escuro: #2B2D42;
+            --whatsapp-color: #25D366;
+        }
+
+        /* Rolagem suave ao clicar nos links do menu */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px; /* Evita que o menu fixo cubra o título da seção */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--claro);
+            color: var(--escuro);
+            line-height: 1.6;
+        }
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+        /* --- MENU DE NAVEGAÇÃO FIXO (NAVBAR) --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(31, 78, 91, 0.95); /* Azul Água com leve transparência */
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-item a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-item a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- HERO SECTION COM CARROSSEL DE FUNDO --- */
+        .hero {
+            position: relative;
+            height: 90vh; /* Aumentado ligeiramente para acomodar o cronômetro com folga */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px; /* Compensação por conta do menu fixo */
+            overflow: hidden;
+        }
+
+        /* Container das imagens de fundo do topo */
+        .hero-bg-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Cada imagem de fundo */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Transição suave de esmaecimento */
+}
+
+.hero-slide-vista {
+    background-image: url('img/vista_andorinahs.jpg');
+}
+
+.hero-slide-cafe {
+    background-image: url('img/cafe.png');
+}
+
+.hero-slide-praia {
+    background-image: url('img/praia itaipu.jfif');
+}
+
+        /* Overlay escuro para dar contraste ao texto */
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6));
+        }
+
+        /* Classe ativa para exibir o slide atual */
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        /* Conteúdo do Hero fica acima das imagens */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #E2E8F0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- ESTILOS DO CRONÔMETRO (COUNTDOWN) --- */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .countdown-box {
+            background-color: rgba(31, 78, 91, 0.8); /* Azul água com transparência */
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 12px;
+            border-radius: 10px;
+            min-width: 85px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #E2E8F0;
+            letter-spacing: 1px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(224, 122, 95, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: #1ebd57;
+}
+
+.btn-full {
+    width: 100%;
+    border-radius: 8px;
+}
+
+        /* --- CARROSSEL DE FOTOS DO MEIO (A JORNADA) --- */
+        .carousel-section {
+            padding: 60px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--azul-agua);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #718096;
+            margin-bottom: 40px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 1.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Botões do Carrossel */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--escuro);
+            transition: background-color 0.2s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: white;
+        }
+
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        /* --- INCLUSOS & CRONOGRAMA --- */
+.details-section {
+    padding: 60px 0;
+    background-color: #f1f5f9;
+}
+
+.schedule-heading {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.schedule-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.schedule-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.schedule-item {
+    margin: 20px 0;
+}
+
+.schedule-title-blue {
+    color: #2980b9;
+}
+
+.schedule-title-green {
+    color: #27ae60;
+}
+
+.schedule-title-purple {
+    color: #8e44ad;
+}
+
+.schedule-title-orange {
+    color: #d35400;
+}
+
+.schedule-title-teal {
+    color: #16a085;
+}
+
+.schedule-title-red {
+    color: #c0392b;
+}
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--verde-natureza);
+        }
+
+        .card h3 {
+            color: var(--verde-natureza);
+            margin-bottom: 12px;
+        }
+
+        /* --- SEÇÃO DE INSCRIÇÃO & CONTATO --- */
+        .booking-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+            align-items: stretch;
+        }
+
+        .form-card {
+            background: var(--claro);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--azul-agua);
+        }
+
+        .form-card h3 {
+            color: var(--azul-agua);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--escuro);
+        }
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--azul-agua);
+}
+
+.form-divider {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.form-section-title {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.btn-submit {
+    margin-top: 15px;
+}
+
+        .info-card {
+            background: linear-gradient(135deg, var(--verde-natureza), var(--azul-agua));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: white;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebd57;
+        }
+
+        .btn-whatsapp i {
+            margin-right: 8px;
+        }
+
+        /* --- SEÇÃO DE PATROCINADORES --- */
+        .sponsors-section {
+            padding: 60px 0;
+            background-color: #f8fafc;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .sponsor-item {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-item img {
+            max-width: 160px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-item:hover {
+            transform: scale(1.08);
+        }
+
+        .sponsor-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* --- FOOTER / CTA --- */
+        .footer-cta {
+            background-color: var(--azul-agua);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Mobile Menu */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .slide img { height: 300px; }
+            .content-grid { grid-template-columns: 1fr; gap: 30px; }
+            .nav-menu { gap: 10px; }
+            .nav-item a { font-size: 0.85rem; padding: 6px 8px; }
+            .logo { font-size: 1.1rem; }
+            .countdown-box { min-width: 70px; padding: 8px; }
+            .countdown-number { font-size: 1.6rem; }
+            .countdown-label { font-size: 0.65rem; }
+            .sponsors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .sponsor-item img { max-width: 120px; }
+        }
+

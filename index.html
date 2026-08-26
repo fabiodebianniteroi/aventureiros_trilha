@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAdventure Cafe - Trilha, Remada e Sabor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">Aventureiro Nikit Chapa Sup</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#inicio">Início</a></li>
+                <li class="nav-item"><a href="#jornada">A Jornada</a></li>
+                <li class="nav-item"><a href="#inclusos">Cronograma</a></li>
+                <li class="nav-item"><a href="#inscricao">Inscrição</a></li>
+                <li class="nav-item"><a href="#patrocinadores">Patrocinadores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-bg-carousel">
+            <div class="hero-slide hero-slide-vista active"></div>
+            <div class="hero-slide hero-slide-cafe"></div>
+            <div class="hero-slide hero-slide-praia"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1>O Despertar Perfeito: Trilha, Remada & Café - 14/07/2026</h1>
+                <p>Conecte-se com a natureza em uma experience completa de ecoturismo e aventura.</p>
+                
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Min</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seg</span>
+                    </div>
+                </div>
+
+                <a href="#inscricao" class="btn">🌟 Quero Garantir Minha Vaga</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="carousel-section" id="jornada">
+        <div class="container">
+            <h2 class="section-title">Explore a Jornada</h2>
+            <p class="section-subtitle">✨ Explore a Jornada – Um sábado diferente de tudo o que você já viveu!<br>
+            Prepare-se para sair da rotina e mergulhar em uma experiência que mistura natureza, aventura e boas energias.<br> A Trilha das Andorinhas abre o caminho com paisagens incríveis e o som das aves guiando cada passo. <br>Depois, o grupo segue até Camboinhas, onde o aroma do nosso café pós-trilha te recebe com aconchego e sabor.<br>
+            E para fechar com chave de ouro, vem a remada de caiaque e stand up paddle, um momento de conexão total com o mar e com a vibe da equipe Aventureiros Nikit e ChapaSup.<br>
+            É mais do que um passeio — é uma jornada para renovar corpo e mente, celebrar amizades e descobrir o prazer de viver o presente.</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                
+                <div class="carousel-track" id="track">
+                    <div class="slide">
+                        <img src="img/trilhahora.png" alt="Trilha Ecológica">
+                        <div class="slide-caption">Horário da trilha</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/cafehora.png" alt="Caiaque e SUP">
+                        <div class="slide-caption">Hora do Café</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/remadahora.png" alt="Café da Manhã">
+                        <div class="slide-caption">Vamos remar!!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-section" id="inclusos">
+        <div class="container">
+            <h2 class="schedule-heading">🌟 Explore a Jornada – Cronograma Completo</h2>
+            <p class="schedule-intro">Um sábado diferente de tudo o que você já viveu!</p>
+
+            <div class="schedule-list">
+                <div class="schedule-item">
+                    <h3 class="schedule-title schedule-title-blue">🌅 06:00 – Encontro e Partida</h3>
+                    <p>Local: Terminal de Ônibus de Itaipu<br>Recepção dos participantes e saída pontual.<br>Chegar 15 minutos antes para organização.</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3 class="schedule-title schedule-title-green">🥾 06:15 – Trilha das Andorinhas</h3>
+                    <p>Duração: 1h30<br>Nível: Fácil (com ladeira)<br>Caminhada leve com paradas para fotos e vista panorâmica de Itacoatiara e Capela.</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3 class="schedule-title schedule-title-purple">☕ 08:00 – Caminhada até a Base Camboinhas</h3>
+                    <p>Descida tranquila até a base à beira-mar.<br>Momento de relaxar e aproveitar o pós-trilha.</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3 class="schedule-title schedule-title-orange">🍽️ 08:30 – Café Pós-Trilha</h3>
+                    <p>Local: Base Chapasup – Camboinhas<br>Café da manhã completo com frutas, pães, sucos e café especial.<br>Confraternização e troca de experiências.</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3 class="schedule-title schedule-title-teal">🌊 09:30 – Remada de Caiaques e Stand Up</h3>
+                    <p>Duração: 30 minutos<br>Remada guiada pela praia de Camboinhas.<br>Equipamentos fornecidos pela equipe Aventureiros e Chapasup.<br>Nível iniciante – ideal para todos.</p>
+                </div>
+
+                <div class="schedule-item">
+                    <h3 class="schedule-title schedule-title-red">🏁 10:15 – Encerramento e Retorno</h3>
+                    <p>Fotos finais e agradecimentos.<br>Convite para o próximo passeio.<br>Clima de gratidão e missão cumprida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscricao" class="booking-section">
+        <div class="container">
+            <h2 class="section-title text-center">Reserve o Seu Lugar</h2>
+            <p class="section-subtitle text-center">As vagas são super limitadas para garantir o conforto e segurança de todos.<br>Preencha a pré-inscrição abaixo e chame no WhatsApp</p>
+            
+            <div class="content-grid">
+                <div class="form-card">
+                    <h3>Formulário de Pré-Inscrição</h3>
+                    <form id="trailForm" action="https://script.google.com/macros/s/AKfycbxtQN33oVCdw01S4SFrRcgXM5hTFI0_Z7KgwRbCEZraqiJhXqiMh4VCatbEv-tuG_42/exec" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="Nome" required placeholder="Digite seu nome completo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="Email" required placeholder="aventureiroschapasupnikit@gmail.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">WhatsApp</label>
+                            <input type="tel" id="phone" name="WhatsApp" required placeholder="(XX) 99999-9999">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Sua experiência com remo:</label>
+                            <select id="experience" name="Experiencia_Remo">
+                                <option value="Iniciante">Nunca remei / Sou iniciante</option>
+                                <option value="Intermediario">Já remei algumas vezes</option>
+                                <option value="Avancado">Pratico com regularidade</option>
+                            </select>
+                        </div>
+
+                        <hr class="form-divider">
+                        <h4 class="form-section-title">Informações de Segurança</h4>
+
+                        <div class="form-group">
+                            <label for="cardiac">Sofre de algum problema cardíaco (arritmia, sopro, histórico)?</label>
+                            <select id="cardiac" name="Problema_Cardiaco" required>
+                                <option value="Nao">Não</option>
+                                <option value="Sim">Sim</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="respiratory">Sofre de asma, bronquite ou problema respiratório?</label>
+                            <select id="respiratory" name="Problema_Respiratorio" required>
+                                <option value="Nao">Não</option>
+                                <option value="Sim">Sim</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="allergy">Possui alguma alergia grave (insetos, alimentos, etc)?</label>
+                            <select id="allergy" name="Alergia_Grave" required>
+                                <option value="Nao">Não</option>
+                                <option value="Sim">Sim</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="details-group">
+                            <label for="health_details" id="details-label">Se marcou "Sim" em algo, especifique e informe seus medicamentos:</label>
+                            <textarea id="health_details" name="Detalhes_Saude" rows="3" placeholder="Ex: Tenho asma e uso bombinha XPTO / Sou alérgico a abelhas."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergency_contact">Nome do Contato de Emergência (Quem NÃO vai à trilha)</label>
+                            <input type="text" id="emergency_contact" name="Contato_Emergencia_Nome" required placeholder="Nome do contato">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergency_phone">Telefone do Contato de Emergência</label>
+                            <input type="tel" id="emergency_phone" name="Contato_Emergencia_Fone" required placeholder="(XX) 99999-9999">
+                        </div>
+
+                        <button type="submit" class="btn btn-full btn-submit">Enviar Minha Inscrição</button>
+                    </form>
+                </div>
+
+                <div class="info-card">
+                    <h3>Prefere falar conosco agora?</h3>
+                    <p>Ficou com alguma dúvida sobre o roteiro, pontos de encontro ou restrições alimentares? Converse direto com o nosso guia operacional.</p>
+                    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20experi%C3%AAncia%20do%20EcoAdventure%20Cafe." target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Conversar via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="patrocinadores" class="sponsors-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Patrocinadores</h2>
+            <p class="section-subtitle">Marcas parceiras que apoiam o esporte, a natureza e as nossas aventuras.</p>
+            
+            <div class="sponsors-grid">
+                <a href="https://www.sitepatrocinador1.com.br" target="_blank" rel="noopener noreferrer" class="sponsor-item" title="Visitar Patrocinador 1">
+                    <img src="img/patrocinador1.png" alt="Logo Patrocinador 1">
+                </a>
+                
+                <a href="https://www.sitepatrocinador2.com.br" target="_blank" rel="noopener noreferrer" class="sponsor-item" title="Visitar Patrocinador 2">
+                    <img src="img/patrocinador2.png" alt="Logo Patrocinador 2">
+                </a>
+                
+                <a href="https://www.sitepatrocinador3.com.br" target="_blank" rel="noopener noreferrer" class="sponsor-item" title="Visitar Patrocinador 3">
+                    <img src="img/patrocinador3.png" alt="Logo Patrocinador 3">
+                </a>
+
+                <a href="https://www.sitepatrocinador4.com.br" target="_blank" rel="noopener noreferrer" class="sponsor-item" title="Visitar Patrocinador 4">
+                    <img src="img/patrocinador4.png" alt="Logo Patrocinador 4">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-cta">
+        <div class="container">
+            <p>&copy; 2026 EcoAdventure Cafe - Todos os direitos reservados. Desenvolvido para Aventureiros Nikit & ChapaSup.</p>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
+
